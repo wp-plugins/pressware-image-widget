@@ -1,0 +1,52 @@
+/**
+ * Pressware Image Widget administrator styles
+ *
+ * The pre-processed stylesheet specifically for styling the dashboard
+ * components of the widget.
+ *
+ * @package   Pressware_Image_Widget/admin/css/sass
+ * @author    Pressware, LLC
+ * @license   GPL-2.0+
+ * @link      http://shop.pressware.co/image-widget/
+ * @copyright 2014 Pressware, LLC
+ */
+/*
+ * Variables
+ *----------------------------------------*/
+/*
+ * Styles
+ *----------------------------------------*/
+.pressware-image-widget-container {
+  margin: 16px 0; }
+
+.pressware-image-uploaded {
+  margin: 8px 0 8px 0; }
+  .pressware-image-uploaded .description {
+    font-style: italic;
+    padding: 0 !important; }
+  .pressware-image-uploaded img {
+    max-width: 100%;
+    height: auto; }
+
+.pressware-image-data {
+  display: none; }
+
+.pressware-image-upload-container {
+  margin: 8px 0 8px 0; }
+
+/*
+ * For the free version
+ *----------------------------------------*/
+.pressware-image-widget-upgrade p {
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  margin-bottom: 18px;
+  margin: 8px 0 8px 0;
+  color: #c09853;
+  padding: 12px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  font-family: Arial, Sans-serif;
+  font-size: 12px; }
