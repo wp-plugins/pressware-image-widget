@@ -16,6 +16,10 @@
 	<div class="pressware-image-uploaded">
 	</div><!-- .pressware-image-uploaded -->
 
+	<div class="pressware-image-options">
+		<input type="text" id="<?php echo $this->get_field_id( 'pressware-image-anchor' ); ?>" name="<?php echo $this->get_field_name( 'pressware-image-anchor' ); ?>" value="<?php echo esc_attr( $anchor ); ?>" placeholder="<?php _e( 'Link URL', $this->get_widget_slug() ) ?>" />
+	</div><!-- .pressware-image-options -->
+
 	<div class="pressware-image-data">
 		<input type="text" id="<?php echo $this->get_field_id( 'pressware-image-id' ); ?>" name="<?php echo $this->get_field_name( 'pressware-image-id' ); ?>" value="<?php echo esc_attr( $id ); ?>" />
 		<input type="text" id="<?php echo $this->get_field_id( 'pressware-image-title' ); ?>" name="<?php echo $this->get_field_name( 'pressware-image-title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />

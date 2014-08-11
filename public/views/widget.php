@@ -12,5 +12,17 @@
  */
 ?>
 <div class="pressware-image-container">
-	<img src="<?php echo $instance['pressware-image-url']; ?>" alt="<?php echo $instance['pressware-image-alt']; ?>" id="<?php echo $instance['pressware-image-id']; ?>" height="<?php echo $instance['pressware-image-height']; ?>" width="<?php echo $instance['pressware-image-width']; ?>" />
+
+	<?php if ( $this->has_image_anchor( $instance['pressware-image-anchor'] ) ) { ?>
+
+		<a href="<?php echo $instance['pressware-image-anchor'] ?>">
+			<img src="<?php echo $instance['pressware-image-url']; ?>" alt="<?php echo $instance['pressware-image-alt']; ?>" id="<?php echo $instance['pressware-image-id']; ?>" height="<?php echo $instance['pressware-image-height']; ?>" width="<?php echo $instance['pressware-image-width']; ?>" />
+		</a>
+
+	<?php } else { ?>
+
+		<img src="<?php echo $instance['pressware-image-url']; ?>" alt="<?php echo $instance['pressware-image-alt']; ?>" id="<?php echo $instance['pressware-image-id']; ?>" height="<?php echo $instance['pressware-image-height']; ?>" width="<?php echo $instance['pressware-image-width']; ?>" />
+
+	<?php } ?>
+
 </div><!-- .pressware-image-container -->

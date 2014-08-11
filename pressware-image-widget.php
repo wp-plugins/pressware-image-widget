@@ -14,7 +14,7 @@
  * Plugin Name:       Pressware Image Widget
  * Plugin URI:        http://shop.pressware.co/image-widget/
  * Description:       A widget that allows you to use the Media Uploader to add images to your sidebar(s).
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Pressware, LLC
  * Author URI:        http://pressware.co/
  * Text Domain:       pressware-image-widget

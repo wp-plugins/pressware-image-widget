@@ -49,7 +49,7 @@ class Pressware_Image_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 
-		$this->version = '1.0.0';
+		$this->version = '1.1.0';
 		$this->widget_slug = 'pressware-image-widget';
 
 		parent::__construct(
@@ -114,6 +114,7 @@ class Pressware_Image_Widget extends WP_Widget {
 		$description = isset( $instance['pressware-image-description'] ) ? $instance['pressware-image-description'] : '';
 		$width = isset( $instance['pressware-image-width'] ) ? $instance['pressware-image-width'] : '';
 		$height = isset( $instance['pressware-image-height'] ) ? $instance['pressware-image-height'] : '';
+		$anchor = isset( $instance['pressware-image-anchor'] ) ? $instance['pressware-image-anchor'] : '';
 
 		/**
 		 * The dashboard template for the widget.
@@ -142,6 +143,9 @@ class Pressware_Image_Widget extends WP_Widget {
 		$instance['pressware-image-description'] = ( ! empty( $new_instance['pressware-image-description'] ) ) ? $new_instance['pressware-image-description'] : '';
 		$instance['pressware-image-width'] = ( ! empty( $new_instance['pressware-image-width'] ) ) ? $new_instance['pressware-image-width'] : '';
 		$instance['pressware-image-height'] = ( ! empty( $new_instance['pressware-image-height'] ) ) ? $new_instance['pressware-image-height'] : '';
+
+		$instance['pressware-image-anchor'] = ( ! empty( $new_instance['pressware-image-anchor'] ) ) ? $new_instance['pressware-image-anchor'] : '';
+		$instance['pressware-image-anchor'] = $this->sanitize_url( $instance['pressware-image-anchor'] );
 
 		return $instance;
 
@@ -223,6 +227,41 @@ class Pressware_Image_Widget extends WP_Widget {
 	 */
 	private function get_version() {
 		return $this->version;
+	}
+
+	/**
+	 * Sanitizes the URL coming in from the widget's form so that it's safe
+	 * and well-formed.
+	 *
+	 * @since     1.1.0
+	 * @access    private
+	 * @param     $url        string    The incoming string which will be used as the anchor.
+	 * @return    string                The URL to which the image will be linked.
+	 */
+	private function sanitize_url( $url ) {
+
+		// Sanitize the incoming string
+		$url = strip_tags( $url );
+
+		// If the URL doesn't begin with a protocol, default to http
+		if ( ! preg_match( "~^(?:f|ht)tps?://~i", $url ) ) {
+        	$url = "http://" . $url;
+		}
+
+		$url = esc_url( trailingslashit( $url ) );
+
+		// if, after all of this, we still don't have a valid URL, return an empty string
+		return ( filter_var( $url, FILTER_VALIDATE_URL ) ) ? $url : '';
+
+	}
+
+	/**
+	 * @since     1.1.0
+	 * @access    private
+	 * @return    bool        True if the image has an anchor; otherwise, false.
+	 */
+	private function has_image_anchor( $anchor_value ) {
+		return ( 0 < strlen( trim( $anchor_value ) ) );
 	}
 
 	/**
