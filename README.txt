@@ -3,8 +3,8 @@ Contributors: tommcfarlin
 Donate link: http://shop.pressware.co/image-widget/
 Tags: widgets, images
 Requires at least: 3.9.0
-Tested up to: 4.1
-Stable tag: 1.2.0
+Tested up to: 4.2.1
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,9 @@ Premium Support, upgrades, and access to new features is available for this plug
 4. The image widget displayed in the Twentyfourteen Theme.
 
 == Changelog ==
+
+= 1.3.0 =
+* WordPress 4.2.1 compatibility
 
 = 1.1.0 =
 * Adding support for an image anchor
